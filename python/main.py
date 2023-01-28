@@ -1,6 +1,6 @@
-from pymongo import MongoClient
 import pprint
 import random
+from pymongo import MongoClient
 
 print("Python devcontainer projet\n")
 
@@ -16,21 +16,23 @@ pp = pprint.PrettyPrinter(indent=4)
 # Connect to the collection
 print('connected to mongo -> library -> inventory')
 
+
 def get_all_data():
     data = list(db.inventory.find())
     print(f'\nfound {len(data)} element in the collection\n')
     pp.pprint(data)
 
+
 def add_random_data():
-    item = { 
+    item = {
         "item": "random_add",
-        "qty": random.randint(0, 50), 
-        "size": { 
-            "h": random.randint(10, 35), 
-            "w": random.randint(10, 35), 
-            "uom": "cm" 
-        }, 
-        "status": "Z" 
+        "qty": random.randint(0, 50),
+        "size": {
+            "h": random.randint(10, 35),
+            "w": random.randint(10, 35),
+            "uom": "cm"
+        },
+        "status": "Z"
     }
     db.inventory.insert_one(item)
     pp.pprint(f'We just added : \n{item}')
