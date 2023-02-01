@@ -12,19 +12,32 @@
 	"workspaceFolder": "/workspace",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+	"features": {
+		"node": {
+			"version": "lts",
+			"nodeGypDependencies": true
+		},
+		"ghcr.io/devcontainers/features/python:1": {
+			
+		}
+	},
+
 	"customizations": {
 		// Configure properties specific to VS Code.
 		"vscode": {
 			// Set *default* container specific settings.json values on container create.
-			"settings": {},
-			"extensions": ["ms-python.pylint", "mongodb.mongodb-vscode"]
+			"settings": {
+				"python.venvPath": "${workspaceFolder}/backend/.venv",
+				"python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/bin/python",
+				"python.linting.pylintPath": "${workspaceFolder}/backend/.venv/bin/pylint"
+			},
+			"extensions": ["ms-python.pylint", "mongodb.mongodb-vscode", "loiane.angular-extension-pack"]
 		}
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
+	
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "bash ./.devcontainer/post-create-command.sh",
 
