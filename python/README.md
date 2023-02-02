@@ -11,3 +11,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## Flask Development Server
 
 Navigate to api directory and run `python api.py`. You need to provide an .env file with two variables, JWT_SECRET_KEY and DB_URL, which is the mongoDB isntance.
+
+
+## Fork from
+https://github.com/antoniogodoy17/flask-angular-todo-app
