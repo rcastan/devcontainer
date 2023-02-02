@@ -1,8 +1,8 @@
 # Flask-Angular To-Do App
 
 - Angular CLI version 8.0.2
-- Python version 3.6.8
-- Flask version 1.0.3
+- Python version 3.9
+- Flask
 
 ## Angular Development server
 
